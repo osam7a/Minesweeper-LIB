@@ -1,7 +1,11 @@
 import random
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from ..board import Board
 
 
-def find_neighbors(board, row, col, diagonal=True):
+def find_neighbors(board: "Board", row: int, col: int, diagonal: bool=True):
     """Finds the neighbors of a cell.
 
     :param board: The board to search.
@@ -30,13 +34,13 @@ def find_neighbors(board, row, col, diagonal=True):
     return neighbors
 
 
-def make_mines(board, rows, cols, mines_n=8, excep=None, debug=False):
+def make_mines(board: "Board", rows: int, cols: int, mines_n: int=8, excep: tuple=None, debug: bool=False):
     """Place random mines on the board
 
-    :param board: The board to make the mines on.
+    :param board: Board object of the board to make the mines on.
     :param size: The size of the board.
-    :param mines_n: The number of mines to create.
-    :excep: The cell to exclude from the mines.
+    :param mines_n: The number of mines to create (8 by default).
+    :excep: Tuple of (row, column) of the cell to exclude from the mines.
 
     :return: The created board.
     """

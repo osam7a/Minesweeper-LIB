@@ -126,7 +126,7 @@ class Board:
         Places the mines on the board.
 
         :param amount maximum=rows of the board * columns of the board: The amount of mines to place.
-        :param exclude: The cell to exclude from the placement, (Excludes other cells around it too, this will not work if the size of the board is less than 16 cells).
+        :param exclude: Tuple of (row, column) of the cell to exclude from the placement, (Excludes other cells around it too, this will not work if the size of the board is less than 16 cells).
 
         :return: None
         """

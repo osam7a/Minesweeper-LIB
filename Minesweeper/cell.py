@@ -9,7 +9,7 @@ class Cell:
     :property revealed: Whether the cell is revealed.
     :property value: The value of the cell (-1 if unknown).
     """
-    def __init__(self, row, column):
+    def __init__(self, row: int, column: int):
         self.row = row
         self.column = column
         self.mine = False
